@@ -25,12 +25,12 @@ class AxiosRequest extends Request{
         type: 'server',
         msg: this.status[responseError.response.status],
         data: responseError
-      }
+      } as const
     } else {
       return {
         type: 'request',
         data: responseError
-      }
+      } as const
     }
   }
 }
