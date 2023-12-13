@@ -1,9 +1,9 @@
 import axios, { AxiosRequestConfig } from 'axios'
-import { Request } from 'complex-request'
-import { RequestConfig } from 'complex-request/src/Request'
+import { BaseRequest } from 'complex-request'
+import { RequestConfig } from 'complex-request/src/BaseRequest'
 import Rule from 'complex-request/src/Rule'
 
-class AxiosRequest extends Request{
+class AxiosRequest extends BaseRequest{
   $request(requestConfig: RequestConfig, rule?: Rule, isRefresh?: boolean) {
     const axiosConfig: AxiosRequestConfig = {
       url: requestConfig.url,
