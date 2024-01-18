@@ -3,9 +3,9 @@ import { BaseRequest } from 'complex-request'
 import { RequestConfig } from 'complex-request/src/BaseRequest'
 import Rule from 'complex-request/src/Rule'
 
-class AxiosRequest<R extends AxiosResponse = AxiosResponse> extends BaseRequest<R>{
-  $request(requestConfig: RequestConfig<R>, rule?: Rule<R>, isRefresh?: boolean): Promise<R> {
-    const axiosConfig: AxiosRequestConfig = {
+class AxiosRequest<R extends AxiosResponse = AxiosResponse, L extends AxiosRequestConfig = AxiosRequestConfig> extends BaseRequest<R, L>{
+  $request(requestConfig: RequestConfig<R, L>, rule?: Rule<R, L>, isRefresh?: boolean) {
+    const axiosRequestConfig: AxiosRequestConfig = {
       url: requestConfig.url,
       method: requestConfig.method,
       headers: requestConfig.headers,
@@ -15,9 +15,9 @@ class AxiosRequest<R extends AxiosResponse = AxiosResponse> extends BaseRequest<
       ...requestConfig.local
     }
     if (requestConfig.format) {
-      requestConfig.format(axiosConfig, rule, isRefresh)
+      requestConfig.format(axiosRequestConfig, rule, isRefresh)
     }
-    return axios(axiosConfig)
+    return axios(axiosRequestConfig) as Promise<R>
   }
   $parseError(responseError: { response?: { status: number } }) {
     if (responseError.response) {
