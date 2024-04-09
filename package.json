@@ -1,6 +1,6 @@
 {
   "name": "complex-request-axios",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "a complex request from axios",
   "main": "index.ts",
   "repository": {
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "axios": "^1.6.8",
-    "complex-request": "0.3.0 - 0.3.99"
+    "complex-request": "0.3.1 - 0.3.99"
   },
   "devDependencies": {
     "typescript": "^5.2.2"
