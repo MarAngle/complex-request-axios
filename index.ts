@@ -1,7 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
-import { BaseRequest } from 'complex-request'
+import { BaseRequest, Rule } from 'complex-request'
 import { RequestConfig } from 'complex-request/src/BaseRequest'
-import Rule from 'complex-request/src/Rule'
 
 class AxiosRequest<R extends AxiosResponse = AxiosResponse, L extends AxiosRequestConfig = AxiosRequestConfig> extends BaseRequest<R, L>{
   $request(requestConfig: RequestConfig<R, L>, rule?: Rule<R, L>, isRefresh?: boolean) {
