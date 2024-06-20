@@ -1,5 +1,8 @@
 ### ToDo
 
+### 0.3.6
+- 优化undefined校验
+
 ### 0.3.5
 - responseFormat=>responseParse
 - Rule的原format函数更改为parse函数，添加新format函数在请求前实现规则的格式化
