@@ -1,9 +1,9 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
-import { BaseRequest, Rule } from 'complex-request'
+import { BaseRequest } from 'complex-request'
 import { RequestConfig } from 'complex-request/src/BaseRequest'
 
 class AxiosRequest<R extends AxiosResponse = AxiosResponse, L extends AxiosRequestConfig = AxiosRequestConfig> extends BaseRequest<R, L>{
-  $request(requestConfig: RequestConfig<R, L>, rule?: Rule<R, L>, isRefresh?: boolean) {
+  $request(requestConfig: RequestConfig<R, L>, isRefresh?: boolean) {
     const axiosRequestConfig: AxiosRequestConfig = {
       url: requestConfig.url,
       method: requestConfig.method,
@@ -14,7 +14,7 @@ class AxiosRequest<R extends AxiosResponse = AxiosResponse, L extends AxiosReque
       ...requestConfig.local
     }
     if (requestConfig.format) {
-      requestConfig.format(axiosRequestConfig, rule, isRefresh)
+      requestConfig.format(axiosRequestConfig, isRefresh)
     }
     return axios(axiosRequestConfig) as Promise<R>
   }
