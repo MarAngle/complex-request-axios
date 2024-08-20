@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, CreateAxiosDefaults } from 'axios'
 import { BaseRequest } from 'complex-request'
-import { RequestConfig, RequestInitOption } from 'complex-request/src/BaseRequest'
+import { RequestConfig, RequestInitOption, requestTrigger } from 'complex-request/src/BaseRequest'
 
 export interface AxiosRequestInitOption<R extends AxiosResponse = AxiosResponse> extends RequestInitOption<R> {
   axios?: CreateAxiosDefaults
@@ -12,7 +12,7 @@ class AxiosRequest<R extends AxiosResponse = AxiosResponse, L extends AxiosReque
     super(initOption)
     this.$axios = axios.create(initOption.axios)
   }
-  $request(requestConfig: RequestConfig<R, L>, isRefresh?: boolean) {
+  $request(requestConfig: RequestConfig<R, L>, trigger?: requestTrigger) {
     const axiosRequestConfig = {
       url: requestConfig.url,
       method: requestConfig.method,
@@ -23,7 +23,7 @@ class AxiosRequest<R extends AxiosResponse = AxiosResponse, L extends AxiosReque
       ...requestConfig.local
     } as L
     if (requestConfig.format) {
-      requestConfig.format(axiosRequestConfig, isRefresh)
+      requestConfig.format(axiosRequestConfig, trigger)
     }
     return this.$axios.request(axiosRequestConfig) as Promise<R>
   }
