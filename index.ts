@@ -2,13 +2,13 @@ import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, CreateAxiosDef
 import { BaseRequest } from 'complex-request'
 import { RequestConfig, RequestInitOption, requestTrigger } from 'complex-request/src/BaseRequest'
 
-export interface AxiosRequestInitOption<R extends AxiosResponse = AxiosResponse> extends RequestInitOption<R> {
+export interface AxiosRequestInitOption<R extends AxiosResponse = AxiosResponse, L extends AxiosRequestConfig = AxiosRequestConfig> extends RequestInitOption<R, L> {
   axios?: CreateAxiosDefaults
 }
 
 class AxiosRequest<R extends AxiosResponse = AxiosResponse, L extends AxiosRequestConfig = AxiosRequestConfig> extends BaseRequest<R, L>{
   $axios: AxiosInstance
-  constructor(initOption: AxiosRequestInitOption<R>) {
+  constructor(initOption: AxiosRequestInitOption<R, L>) {
     super(initOption)
     this.$axios = axios.create(initOption.axios)
   }
