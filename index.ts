@@ -36,7 +36,7 @@ class AxiosRequest<R extends AxiosResponse = AxiosResponse, L extends AxiosReque
       } as const
     } else {
       return {
-        type: 'request',
+        type: 'internal',
         data: responseError
       } as const
     }
