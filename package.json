@@ -1,6 +1,6 @@
 {
   "name": "complex-request-axios",
-  "version": "0.5.9",
+  "version": "0.5.10",
   "description": "a complex request from axios",
   "main": "index.ts",
   "repository": {
@@ -8,8 +8,8 @@
     "url": "https://github.com/MarAngle/complex-request-axios.git"
   },
   "dependencies": {
-    "axios": "^1.7.2",
-    "complex-request": "0.5.9 - 0.5.99"
+    "axios": "^1.7.7",
+    "complex-request": "0.5.10 - 0.5.99"
   },
   "devDependencies": {
     "typescript": "^5.2.2"
