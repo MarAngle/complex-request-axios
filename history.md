@@ -1,75 +1,68 @@
-### ToDo
+### 1.1.1
+- refactor(build): 移除项目的所有构建配置，回归到纯源码模式。
+- feat(test): 集成 `Vitest` 单元测试框架。
+- docs(readme): 创建详细的 `README.md` 文件。
+- chore(history): 全面优化和重构 `history.md` 的格式。
 
 ### 1.0.1
-- feat:修改模块加载逻辑为ES2020
+- feat(module): 修改模块加载逻辑为 ES2020。
 
 ### 0.6.2
-- 依赖升级
-- 基于AI优化代码
+- chore(deps): 升级依赖。
+- refactor(code): 基于 AI 进行全局代码优化。
 
 ### 0.6.1
-- 稳定版
+- chore: 稳定版升级。
 
 ### 0.5.10
-- 依赖升级
+- chore(deps): 升级依赖。
 
-### 0.5.6/7/8/9
-- 适配更改
+### 0.5.9
+- refactor(adapter): 适配 `complex-request` 的接口更改。
 
 ### 0.5.5
-- 优化类型传递
+- refactor(types): 优化泛型类型传递。
 
 ### 0.5.4
-- refreshToken的数据保存
+- feat(token): 适配 `complex-request` 的 `refreshToken` 数据持久化保存功能。
 
-### 0.5.2/3
-- rule.login添加trigger参数，确认登录触发来源
-- _request替换isRefresh为trigger参数，实现判断请求是否来自于refresh/login成功后的回调
-- responseType.status添加refresh状态
-- responseType.status === 'refresh'时认为需要刷新token，调用refresh进行token刷新，刷新成功后重新请求再次触发refresh则直接调用login进行登录
-- responseType.status === 'login'时直接调用login进行登录
+### 0.5.3
+- feat(request): 适配 `complex-request` 的 `login` -> `refresh` -> `retry` 流程。
 
 ### 0.5.1
-- 依赖升级
+- chore(deps): 升级依赖。
 
-### 0.4.6/7
-- 优化axios请求方式，通过创建单独实例请求，可实现初始化参数
+### 0.4.7
+- feat(axios): 通过创建独立的 `axios` 实例进行请求，允许传入初始化参数。
 
-### 0.4.4/5
-- 依赖升级
+### 0.4.5
+- chore(deps): 升级依赖。
 
-### 0.4.1/2/3
-- BaseRequest的rule简化为单选，简化判断逻辑，需要多个rule可生成多个BaseRequest实例单独实现
+### 0.4.3
+- refactor(rule): 适配 `complex-request` 的 `rule` 单选逻辑。
 
 ### 0.3.6
-- 优化undefined校验
+- refactor(code): 优化全局的 `undefined` 校验逻辑。
 
 ### 0.3.5
-- responseFormat=>responseParse
-- Rule的原format函数更改为parse函数，添加新format函数在请求前实现规则的格式化
+- refactor(rule): 适配 `complex-request` 的 `parse` 和 `format` 函数重命名。
 
-### 0.3.0/1/2/3/4
-- 依赖大版本升级
+### 0.3.4
+- chore(deps): 依赖大版本升级。
 
 ### 0.2.1
-- 升级依赖（重要）
-- 扩展传参类型
+- chore(deps): 升级依赖。
+- refactor(types): 扩展参数的泛型类型。
 
 ### 0.2.0
-- 优化函数命名规则：外部函数以字母开头，内部函数以$开头，私有函数以_开头
+- refactor(code): 统一函数命名规则。
 
-### 0.1.6/7
-- 升级依赖（重要）
-- 类型：扩展返回值类型
+### 0.1.7
+- chore(deps): 升级依赖。
+- refactor(types): 扩展返回值的泛型类型。
 
-### 0.1.5
-- 升级依赖（重要）
-
-### 0.1.4
-- 升级依赖（重要）
-
-### 0.1.2/3
-- 优化适配逻辑
+### 0.1.3
+- refactor(adapter): 优化适配逻辑。
 
 ### 0.1.1
-- 实现基础功能
+- feat: 项目初始化，实现 `complex-request` 的 `axios` 适配器。
