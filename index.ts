@@ -1,6 +1,6 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, CreateAxiosDefaults } from 'axios'
+import axios, { type AxiosInstance, type AxiosRequestConfig, type AxiosResponse, type CreateAxiosDefaults } from 'axios'
 import { BaseRequest } from 'complex-request'
-import { RequestConfig, RequestInitOption, requestTrigger } from 'complex-request/src/BaseRequest'
+import type { RequestConfig, RequestInitOption, requestTrigger } from 'complex-request/src/BaseRequest'
 
 export interface AxiosRequestInitOption<R extends AxiosResponse = AxiosResponse, L extends AxiosRequestConfig = AxiosRequestConfig> extends RequestInitOption<R, L> {
   axios?: CreateAxiosDefaults

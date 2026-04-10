@@ -1,3 +1,7 @@
+
+### 1.1.2 - 1.1.3
+- refactor: 将TypeScript类型导入语法升级为type关键字形式
+
 ### 1.1.1
 - refactor(build): 移除项目的所有构建配置，回归到纯源码模式。
 - feat(test): 集成 `Vitest` 单元测试框架。

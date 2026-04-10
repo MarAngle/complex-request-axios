@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { AxiosRequest } from './index';
 import { Rule } from 'complex-request';
-import axios, { AxiosResponse } from 'axios';
+import axios, { type AxiosResponse } from 'axios';
 
 // Mock the axios create method
 vi.mock('axios', () => ({
