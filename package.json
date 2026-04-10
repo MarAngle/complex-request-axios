@@ -20,7 +20,8 @@
   "scripts": {
     "check": "tsc --noEmit",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "release": "npm publish --registry=https://registry.npmjs.org"
   },
   "keywords": [
     "complex",
